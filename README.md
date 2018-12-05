@@ -6,8 +6,8 @@
 
 #### Installation
 
-```
-$ npm i rn-interpolate
+```js
+npm i rn-interpolate // soon
 ```
 
 #### Basic usage
