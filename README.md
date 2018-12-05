@@ -25,6 +25,10 @@ const interpolate = createInterpolation(config)
 console.log(interpolate(0.5)) // 50
 ```
 
+#### Advanced usage
+
+See the [React Native docs](https://facebook.github.io/react-native/docs/animations#interpolation)
+
 ## License
 
 [MIT](LICENSE).
