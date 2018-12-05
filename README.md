@@ -1,0 +1,30 @@
+# rn-interpolate
+
+`AnimationValue.interpolate` from React Native as a standalone js module
+
+## Usage
+
+#### Installation
+
+```
+$ npm i rn-interpolate
+```
+
+#### Basic usage
+
+```ts
+import createInterpolation from 'rn-interpolate'
+
+const config = {
+  inputRange: [0, 1],
+  outputRange: [0, 100]
+}
+
+const interpolate = createInterpolation(config)
+
+console.log(interpolate(0.5)) // 50
+```
+
+## License
+
+[MIT](LICENSE).

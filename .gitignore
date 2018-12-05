@@ -1,0 +1,12 @@
+.idea
+node_modules
+*.log
+.DS_Store
+/dist
+.rpt2_cache
+advanced.esm.js
+advanced.esm.js.map
+advanced.js
+advanced.js.map
+advanced.umd.js
+advanced.umd.js.map

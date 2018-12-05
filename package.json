@@ -1,0 +1,44 @@
+{
+  "name": "rn-interpolate",
+  "description": "Interpolate module based on React Natives AnimationValue.interpolate",
+  "author": "Ragnar Rognstad (http://rognstad.me)",
+  "repository": "rognstadragnar/rn-interpolate",
+  "license": "MIT",
+  "version": "0.0.1",
+  "source": "src/index.ts",
+  "main": "dist/rn-interpolate.js",
+  "module": "dist/rn-interpolate.esm.js",
+  "browser": "dist/rn-interpolate.umd.js",
+  "devDependencies": {
+    "@types/chai": "^4.1.3",
+    "@types/mocha": "^5.2.0",
+    "chai": "^4.1.2",
+    "microbundle": "^0.4.4",
+    "mocha": "^5.1.1",
+    "npm-run-all": "^4.1.5",
+    "prettier": "^1.10.2",
+    "rimraf": "^2.6.2",
+    "ts-node": "^6.0.3",
+    "tslint": "^5.9.1",
+    "tslint-config-prettier": "^1.8.0"
+  },
+  "peerDependencies": {},
+  "scripts": {
+    "release": "npm run build && git commit -am $npm_package_version && git tag $npm_package_version && git push && git push --tags && npm publish",
+    "bundle-advanced:cjs": "microbundle src/advanced.ts -o ./advanced.js -f cjs",
+    "bundle-advanced:esm": "microbundle src/advanced.ts -o ./advanced.js -f es",
+    "bundle-advanced:umd": "microbundle src/advanced.ts -o ./advanced.umd.js -f umd",
+    "bundle-advanced": "npm-run-all bundle-advanced:*",
+    "bundle-basic": "microbundle",
+    "bundle": "npm-run-all clean bundle-basic bundle-advanced",
+    "dev": "microbundle watch --compress false",
+    "prepare": "npm run build",
+    "build": "npm run clean && npm run bundle",
+    "clean": "rimraf dist advanced.js advanced.js.map advanced.esm.js advanced.esm.js.map advanced.umd.js advanced.umd.js.map",
+    "test": "mocha -r ts-node/register __tests__/**/*.spec.ts"
+  },
+  "files": [
+    "src",
+    "dist"
+  ]
+}
